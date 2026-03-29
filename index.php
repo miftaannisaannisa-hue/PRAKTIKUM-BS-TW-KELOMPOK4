@@ -4,9 +4,10 @@
 <div class="container mt-10">
     <div class="row justify-content-center">
         <div class="col-md-6">
+
             <?php if (isset($msg)): ?>
                 <div class="alert alert-<?= $status ?> shadow-lg mb-4" role="alert">
-                    <?= $msg ?>
+                    <?= htmlspecialchars($msg) ?>
                 </div>
             <?php endif; ?>
 
@@ -16,21 +17,21 @@
                 <form action="" method="POST">
                     <div class="mb-3">
                         <label class="form-label font-semibold text-gray-600">Nama Lengkap</label>
-                        <input type="text" name="nama" class="form-control border-gray-300 focus:ring-2 focus:ring-blue-400" placeholder="Masukkan nama...">
+                        <input type="text" name="nama" class="form-control border-gray-300 focus:ring-2 focus:ring-blue-400" placeholder="Masukkan nama..." required>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label font-semibold text-gray-600">Email</label>
-                        <input type="email" name="email" class="form-control hover:border-blue-400 transition" placeholder="name@example.com">
+                        <input type="email" name="email" class="form-control hover:border-blue-400 transition" placeholder="name@example.com" required>
                     </div>
 
                     <div class="mb-4">
                         <label class="form-label font-semibold text-gray-600">Pesan</label>
-                        <textarea name="pesan" class="form-control" rows="4"></textarea>
+                        <textarea name="pesan" class="form-control" rows="4" required></textarea>
                     </div>
 
                     <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition duration-300 transform hover:scale-105 shadow-md">
-                        Kirim Data
+                        Kirim Pesan
                     </button>
                 </form>
             </div>
